@@ -1,0 +1,5 @@
+/node_modules
+/*.log
+/dist-zip
+/src/tab/config.json
+/dist/tab/config.json
