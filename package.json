@@ -27,7 +27,7 @@
     "dexie": "^2.0.4",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.0",
     "vue": "^2.6.10",
     "vue-chartjs": "^3.5.0",
