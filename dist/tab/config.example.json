@@ -1,0 +1,6 @@
+{
+  "alphavantageAPIKey": "api_key",
+  "openweathermapAPIKey": "api_key",
+  "weatherCityName": "maribor",
+  "stockSymbols": ["AMD", "TSLA"]
+}

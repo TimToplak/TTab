@@ -2,30 +2,29 @@
   <div class="weather">
     <div v-if="currentWeatherData" class="row">
       <div class="col-6">
-        <div class="locationName">{{currentWeatherData.name}}</div>
-        <div>{{toReadebleTime(currentWeatherData.dt )}}</div>
-        <div>{{capatalize(currentWeatherData.weather[0].description) }}</div>
+        <div class="locationName">{{ currentWeatherData.name }}</div>
+        <div>{{ toReadebleTime(currentWeatherData.dt) }}</div>
+        <div>{{ capatalize(currentWeatherData.weather[0].description) }}</div>
         <div>
-          <img
-            :src="'http://openweathermap.org/img/wn/' + currentWeatherData.weather[0].icon + '@2x.png'"
-            v-bind:alt="currentWeatherData.weather[0].icon"
-          />
+          <img :src="'http://openweathermap.org/img/wn/' + currentWeatherData.weather[0].icon + '@2x.png'" v-bind:alt="currentWeatherData.weather[0].icon" />
 
-          <span class="currentTemp">{{toCelcius(currentWeatherData.main.temp).toFixed(1)}}</span>°C
+          <span class="currentTemp">{{ toCelcius(currentWeatherData.main.temp).toFixed(1) }}</span
+          >°C
         </div>
       </div>
       <div class="col-6">
-        <div>Sunrise: {{toReadebleTime(currentWeatherData.sys.sunrise)}}</div>
-        <div>Sunset: {{toReadebleTime(currentWeatherData.sys.sunset)}}</div>
+        <div>Sunrise: {{ toReadebleTime(currentWeatherData.sys.sunrise) }}</div>
+        <div>Sunset: {{ toReadebleTime(currentWeatherData.sys.sunset) }}</div>
         <br />
-        <div>Pressure: {{currentWeatherData.main.pressure}} hPa</div>
-        <div>Humidity: {{currentWeatherData.main.humidity}} %</div>
-        <div>Real feel: {{toCelcius(currentWeatherData.main.feels_like).toFixed(1)}}°C</div>
+        <div>Pressure: {{ currentWeatherData.main.pressure }} hPa</div>
+        <div>Humidity: {{ currentWeatherData.main.humidity }} %</div>
+        <div>Real feel: {{ toCelcius(currentWeatherData.main.feels_like).toFixed(1) }}°C</div>
+        <!--
         <div class="chartTypeButtons">
           <div class="chartTypeButton">Temperature</div>
           <div class="chartTypeButton">Rain</div>
           <div class="chartTypeButton">Wind</div>
-        </div>
+        </div>-->
       </div>
     </div>
 
@@ -38,17 +37,12 @@
       <div class="row">
         <div class="col">
           <div class="days">
-            <div
-              v-for="day in forecastWeatherData.days"
-              :key="day.day"
-              class="day"
-              v-on:click="fillDataToChart(day)"
-            >
+            <div v-for="day in forecastWeatherData.days" :key="day.day" class="day" v-on:click="fillDataToChart(day)">
               <div>
-                <img :src="'http://openweathermap.org/img/wn/' + getMostProperIcon(day)+ '.png'" />
+                <img :src="'http://openweathermap.org/img/wn/' + getMostProperIcon(day) + '.png'" />
               </div>
-              <div>{{weekday[day.day]}}</div>
-              <div>{{Math.round(getHighestTemperatureOfTheDay(day))}}° {{Math.round(getLowestTemperatureOfTheDay(day))}}°</div>
+              <div>{{ weekday[day.day] }}</div>
+              <div>{{ Math.round(getHighestTemperatureOfTheDay(day)) }}° {{ Math.round(getLowestTemperatureOfTheDay(day)) }}°</div>
             </div>
           </div>
         </div>
